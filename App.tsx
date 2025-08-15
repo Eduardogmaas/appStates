@@ -42,15 +42,33 @@ class App extends Component<AppProps, AppState>{
 
   render(){
     return(
-      <View style = {{marginTop: 20}}>
-        <Button title="Mudar State" onPress={() => this.entrarComNome('TADS2')}></Button>
-        <Text style={{fontSize: 23, color: 'green', textAlign: 'center'}}>
-          {this.state.nome}
-        </Text>
+      // <View style = {{marginTop: 20}}>
+      //   <Button title="Mudar State" onPress={() => this.entrarComNome('TADS2')}></Button>
+      //   <Text style={{fontSize: 23, color: 'green', textAlign: 'center'}}>
+      //     {this.state.nome}
+      //   </Text>
+      // </View>
+      <View style={styles.area}>
+      <Text style={styles.textoPrincipal}> Texto 01 </Text>
+      <Text style={styles.alinhaTexto}> Texto 02 </Text>
+      <Text style={[styles.textoPrincipal, styles.alinhaTexto]}> Texto 03 </Text>
+      <Text> Texto 04 </Text>
+      <Text> Texto 05 </Text>
       </View>
     )
   }
 }
 
-const styles = StyleSheet
+const styles = StyleSheet.create({
+  area: {
+    marginTop: 40
+  },
+  textoPrincipal:{
+    fontSize: 25,
+    color: 'red'
+  },
+  alinhaTexto:{
+    textAlign: 'center'
+  }
+})
 export default App;
